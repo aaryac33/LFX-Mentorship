@@ -1,14 +1,5 @@
 use actix_web::{web, App, HttpResponse, HttpServer, Responder};
 
-fn login_handler(info: web::Json<LoginInfo>) -> impl Responder {
-    // Your login logic here
-    if info.username == "example_user" && info.password == "example_pass" {
-        HttpResponse::Ok().json(LoginResponse { status: "Login successful".to_string() })
-    } else {
-        HttpResponse::Unauthorized().json(LoginResponse { status: "Login failed".to_string() })
-    }
-}
-
 #[derive(serde::Deserialize)]
 struct LoginInfo {
     username: String,
@@ -18,6 +9,15 @@ struct LoginInfo {
 #[derive(serde::Serialize)]
 struct LoginResponse {
     status: String,
+}
+
+fn login_handler(info: web::Json<LoginInfo>) -> impl Responder {
+    // Your login logic here
+    if info.username == "example_user" && info.password == "example_pass" {
+        HttpResponse::Ok().json(LoginResponse { status: "Login successful".to_string() })
+    } else {
+        HttpResponse::Unauthorized().json(LoginResponse { status: "Login failed".to_string() })
+    }
 }
 
 #[actix_rt::main]
