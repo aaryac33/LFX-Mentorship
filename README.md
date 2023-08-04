@@ -11,6 +11,8 @@ Write the login function: In the src/main.rs file, you can define your login fun
 
 Build and run the server: Run the following command to build and start the server: 'cargo run'
 
+.gitignore: A file that specifies which files or directories should be ignored by version control (Git).
+
 The server should now be running on http://127.0.0.1:8080, ready to accept HTTP POST requests to the /login endpoint.(ip address subject to change)
 
 Now, your Rust server is up and running, and you can send POST requests to http://127.0.0.1:8080/login with JSON data containing username and password fields. The server will respond with the login status in JSON format.
