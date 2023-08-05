@@ -1,14 +1,7 @@
 [package]
-name = "linux_project"
+name = "login_function"
 version = "0.1.0"
-authors = ["aaryaac7@gmail.com"]
-edition = "2023"
+edition = "2018"
 
 [dependencies]
 actix-web = "3.3.2"
-
-[dev-dependencies]
-tokio = "1.0.0"
-
-[build]
-target = "x86_64-unknown-linux-musl"
